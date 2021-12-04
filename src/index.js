@@ -1,3 +1,4 @@
+import AddMovieReviewPage from './pages/addMovieReviewPage'
 import SiteHeader from './components/siteHeader';
 import React from "react";
 import ReactDOM from "react-dom";
@@ -26,16 +27,17 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <SiteHeader />
-        <MoviesContextProvider>
+          <MoviesContextProvider>
             {" "}
             <Switch>
-        <Route path="/reviews/:id" component={MovieReviewPage} />
-        <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
-        <Route path="/movies/:id" component={MoviePage} />
-        <Route exact path="/" component={HomePage} />
-        <Redirect from="*" to="/" />
-        </Switch>
-        </MoviesContextProvider>
+            <Route exact path="/reviews/form" component={AddMovieReviewPage} />
+            <Route path="/reviews/:id" component={MovieReviewPage} />
+            <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
+            <Route path="/movies/:id" component={MoviePage} />
+            <Route exact path="/" component={HomePage} />
+            <Redirect from="*" to="/" />
+            </Switch>
+         </MoviesContextProvider>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

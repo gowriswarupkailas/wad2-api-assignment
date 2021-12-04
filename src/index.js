@@ -1,3 +1,4 @@
+import SiteHeader from './components/siteHeader';
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom";
@@ -8,16 +9,9 @@ import MovieReviewPage from "./pages/movieReviewPage";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/movies/favorites">Favorites</Link>
-        </li>
-      </ul>
-      <Switch>
+      <BrowserRouter>
+          <SiteHeader />      {/* New Header  */}
+          <Switch>
         <Route path="/reviews/:id" component={MovieReviewPage} />
         <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
         <Route path="/movies/:id" component={MoviePage} />

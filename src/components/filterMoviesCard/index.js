@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function FilterMoviesCard(props) {
   const classes = useStyles();
+  console.log(useQuery("genres", getGenres))
   const { data, error, isLoading, isError } = useQuery("genres", getGenres);
 
   if (isLoading) {
@@ -40,7 +41,7 @@ export default function FilterMoviesCard(props) {
   if (isError) {
     return <h1>{error.message}</h1>;
   }
-  const genres = data.genres;
+  const genres = data;
   if (genres[0].name !== "All"){
     genres.unshift({ id: "0", name: "All" });
   }

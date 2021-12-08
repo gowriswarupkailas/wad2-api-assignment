@@ -46,12 +46,12 @@ const App = () => {
             />
             <Route
               exact
-              path="/reviews/nowplaying"
+              path="/movies/nowplaying"
               component={NowPlayingMoviesPage}
             />
             <Route
               exact
-              path="/reviews/trending"
+              path="/movies/trending"
               component={TrendingMoviesPage}
             />
 

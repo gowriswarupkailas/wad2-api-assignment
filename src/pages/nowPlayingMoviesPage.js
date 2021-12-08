@@ -3,11 +3,11 @@ import PageTemplate from "../components/templateMovieListPage";
 import { useQuery } from "react-query";
 import Spinner from "../components/spinner";
 import { getNowPlaying } from "../api/tmdb-api";
-import AddToFavoritesIcon from "../components/cardIcons/addToFavorites";
+import AddToFavouritesIcon from "../components/cardIcons/addToFavorites";
 
 const NowPlayingMoviesPage = (props) => {
   const { data, error, isLoading, isError } = useQuery(
-    "discover",
+    "nowPlaying",
     getNowPlaying
   );
 
@@ -20,14 +20,12 @@ const NowPlayingMoviesPage = (props) => {
   }
   const movies = data.results;
 
-  // Redundant, but necessary to avoid app crashing.
   const favorites = movies.filter((m) => m.favorite);
   localStorage.setItem("favorites", JSON.stringify(favorites));
-  const addToFavorites = (movieId) => true;
-
+  const AddToFavoritesIcon = (movieId) => true;
   return (
     <PageTemplate
-      title="NOW IN CINEMAS NEAR YOU!!!"
+      title="NOW IN CINEMAS NEAR YOU"
       movies={movies}
       action={(movie) => {
         return <AddToFavoritesIcon movie={movie} />;

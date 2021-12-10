@@ -4,17 +4,18 @@ Name: Gowriswarup Kailas Perumal
 
 ## Overview.
 
-[A brief statement on the content of this repository.]
+This Assignment is a React App for displaying a Movies App Database.
 
 ### Features.
 
 [ A bullet-point list of the __new features__ you added to the Movies Fan app (and any modifications to existing features) .]
 
-- Feature 1
-- Feature 2
-- Feature 3
-- etc
-- etc
+- Shows the currently playing movies
+- Shows the currently top rated movies
+- Shows the currently trending movies
+- Shows the upcoming movies
+- Shows the list of popular actors
+- Attempt at Auth0 authentication
 
 ## Setup requirements.
 
@@ -22,13 +23,12 @@ Name: Gowriswarup Kailas Perumal
 
 ## API endpoints.
 
-[ List the __additional__ TMDB endpoints used, giving the description and pathname for each one.]
-
-e.g.
-
-- Discover list of movies - discover/movie
-- Movie details - movie/:id
-- Movie genres = /genre/movie/list
+- Now Playing Movies - discover/movie
+- Top Rated Movies - movie/:id
+- Trending Movies -
+- Upcoming Movies
+- Popular Actors
+- Auth0 authentication prior to landing page
 
 ## App Design.
 

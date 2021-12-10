@@ -1,5 +1,5 @@
 import React from "react";
-import PageTemplate from "../components/templateMovieListPage";
+import PageTemplate from "../components/templateActorsPage";
 import { useQuery } from "react-query";
 import Spinner from "../components/spinner";
 import { getPopularActors } from "../api/tmdb-api";

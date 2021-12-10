@@ -99,9 +99,11 @@ export const getNowPlaying = () => {
     });
 };
 
+//trending has to use popular as keyword.
+
 export const getTrending = () => {
   return fetch(
-    `https://api.themoviedb.org/3/movie/trending?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=1`
+    `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=1`
   )
     .then((response) => {
       if (!response.ok) {

@@ -13,6 +13,7 @@ import MoviesContextProvider from "./contexts/moviesContext";
 import TopRatedMoviesPage from "./pages/topRatedMoviesPage"; // NEW
 import NowPlayingMoviesPage from "./pages/nowPlayingMoviesPage"; // NEW
 import TrendingMoviesPage from "./pages/trendingMoviesPage"; // NEW
+import UpcomingMoviesPage from "./pages/upcomingMoviesPage"; // NEW
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -54,7 +55,11 @@ const App = () => {
               path="/movies/trending"
               component={TrendingMoviesPage}
             />
-
+            <Route
+              exact
+              path="/movies/upcoming"
+              component={UpcomingMoviesPage}
+            />
             <Route path="/movies/:id" component={MoviePage} />
             <Route exact path="/" component={HomePage} />
             <Redirect from="*" to="/" />

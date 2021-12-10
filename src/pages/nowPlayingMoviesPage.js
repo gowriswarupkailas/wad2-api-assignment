@@ -3,7 +3,7 @@ import PageTemplate from "../components/templateMovieListPage";
 import { useQuery } from "react-query";
 import Spinner from "../components/spinner";
 import { getNowPlaying } from "../api/tmdb-api";
-import AddToFavouritesIcon from "../components/cardIcons/addToFavorites";
+import AddToFavoritesIcon from "../components/cardIcons/addToFavorites";
 
 const NowPlayingMoviesPage = (props) => {
   const { data, error, isLoading, isError } = useQuery(

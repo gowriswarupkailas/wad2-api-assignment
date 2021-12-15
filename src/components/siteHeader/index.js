@@ -13,6 +13,11 @@ import { withRouter } from "react-router-dom";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
+import logo from "./logo.svg";
+import "./App.css";
+import Login from "./components/Login";
+import Logout from "./components/Logout";
+
 const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1
@@ -34,7 +39,9 @@ const SiteHeader = ({ history }) => {
     { label: "Now Playing", path: "/movies/nowPlaying" },
     { label: "Trending", path: "/movies/trending" },
     { label: "Upcoming", path: "/movies/upcoming" },
-    { label: "Popular Actors", path: "/person/popular" }
+    { label: "Popular Actors", path: "/person/popular" },
+    { label: "Login", path: "/login" },
+    { label: "Logout", path: "/logout" }
   ];
 
   const handleMenuSelect = (pageURL) => {

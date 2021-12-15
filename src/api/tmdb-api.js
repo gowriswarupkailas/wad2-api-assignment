@@ -99,7 +99,7 @@ export const getNowPlaying = () => {
     });
 };
 
-//trending has to use popular as keyword.
+//This problem has been fixed !!! ---trending has to use popular as keyword---
 
 export const getTrending = () => {
   return fetch(

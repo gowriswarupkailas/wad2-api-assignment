@@ -19,6 +19,8 @@ import NowPlayingMoviesPage from "./pages/nowPlayingMoviesPage"; // NEW
 import TrendingMoviesPage from "./pages/trendingMoviesPage"; // NEW
 import UpcomingMoviesPage from "./pages/upcomingMoviesPage"; // NEW
 
+import { Auth0Provider } from "@auth0/auth0-react";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -31,48 +33,62 @@ const queryClient = new QueryClient({
 
 const App = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <SiteHeader />
-        <MoviesContextProvider>
-          {" "}
-          <Switch>
-            <Route exact path="/reviews/form" component={AddMovieReviewPage} />
-            <Route path="/reviews/:id" component={MovieReviewPage} />
-            <Route
-              exact
-              path="/movies/favorites"
-              component={FavoriteMoviesPage}
-            />
-            <Route
-              exact
-              path="/movies/toprated"
-              component={TopRatedMoviesPage}
-            />
-            <Route
-              exact
-              path="/movies/nowplaying"
-              component={NowPlayingMoviesPage}
-            />
-            <Route
-              exact
-              path="/movies/trending"
-              component={TrendingMoviesPage}
-            />
-            <Route
-              exact
-              path="/movies/upcoming"
-              component={UpcomingMoviesPage}
-            />
-            <Route exact path="/person/popular" component={PopularActorsPage} />
-            <Route path="/movies/:id" component={MoviePage} />
-            <Route exact path="/" component={HomePage} />
-            <Redirect from="*" to="/" />
-          </Switch>
-        </MoviesContextProvider>
-      </BrowserRouter>
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
+    <Auth0Provider
+    // domain="xxxxxxx.us.auth0.com"
+    // clientId="XXXXXXXXXXXXX"
+    // redirectUri={window.location.origin}
+    >
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <SiteHeader />
+          <MoviesContextProvider>
+            {" "}
+            <Switch>
+              <Route
+                exact
+                path="/reviews/form"
+                component={AddMovieReviewPage}
+              />
+              <Route path="/reviews/:id" component={MovieReviewPage} />
+              <Route
+                exact
+                path="/movies/favorites"
+                component={FavoriteMoviesPage}
+              />
+              <Route
+                exact
+                path="/movies/toprated"
+                component={TopRatedMoviesPage}
+              />
+              <Route
+                exact
+                path="/movies/nowplaying"
+                component={NowPlayingMoviesPage}
+              />
+              <Route
+                exact
+                path="/movies/trending"
+                component={TrendingMoviesPage}
+              />
+              <Route
+                exact
+                path="/movies/upcoming"
+                component={UpcomingMoviesPage}
+              />
+              <Route
+                exact
+                path="/person/popular"
+                component={PopularActorsPage}
+              />
+              <Route path="/movies/:id" component={MoviePage} />
+              <Route exact path="/" component={HomePage} />
+              <Redirect from="*" to="/" />
+            </Switch>
+          </MoviesContextProvider>
+        </BrowserRouter>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </Auth0Provider>
   );
 };
 

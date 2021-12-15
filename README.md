@@ -21,9 +21,9 @@ Setup and initial configuration after cloning repo includes the following for op
 
 1.  run the following command in the integrated terminal
 
-    '''
+    ```
     npm install
-    '''
+    ```
     
     in the integrated terminal to install the prerequisites.
 
@@ -38,15 +38,15 @@ Setup and initial configuration after cloning repo includes the following for op
 
     And once approved, in the project base folder, create a new file called .env with the following content:
     
-    '''
+    ```
     REACT_APP_TMDB_KEY= <- your API key value ->
-    '''
+    ```
 
 3.  To install the auth0 prerequisited, run the following command in the integrated terminal
 
-    '''
+    ```
     npm install @auth0/auth0-react
-    '''
+    ```
 
 ## API endpoints.
 

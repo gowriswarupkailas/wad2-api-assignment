@@ -8,8 +8,6 @@ This Assignment is a React App for displaying a Movies App Database.
 
 ### Features.
 
-[ A bullet-point list of the __new features__ you added to the Movies Fan app (and any modifications to existing features) .]
-
 - Shows the currently playing movies
 - Shows the currently top rated movies
 - Shows the currently trending movies
@@ -22,17 +20,33 @@ This Assignment is a React App for displaying a Movies App Database.
 Setup and initial configuration after cloning repo includes the following for optimal functionality:
 
 1.  run the following command in the integrated terminal
-    '''npm install'''
+
+    '''
+    npm install
+    '''
+    
     in the integrated terminal to install the prerequisites.
 
 2.  The TMDB API is used for gathering the movies app data. An API Key that is used to authenticate the API requests can be collectd using the method below.
-    Signup for an account here.
+    Signup for an account at https://www.themoviedb.org/
     Log in to your account. To get a key, follow this sequence:
 
         '''Settings > API > Create > Click on Request an API > Click "Developer" > Fill in Details'''
+        
+    
+    <img width="1286" alt="Screenshot 2021-12-15 at 17 44 32" src="https://user-images.githubusercontent.com/94531892/146237948-1948565f-08de-436b-9538-20d516cefeef.png">
+
+    And once approved, in the project base folder, create a new file called .env with the following content:
+    
+    '''
+    REACT_APP_TMDB_KEY= <- your API key value ->
+    '''
 
 3.  To install the auth0 prerequisited, run the following command in the integrated terminal
-    '''npm install @auth0/auth0-react'''
+
+    '''
+    npm install @auth0/auth0-react
+    '''
 
 ## API endpoints.
 
@@ -47,21 +61,22 @@ Setup and initial configuration after cloning repo includes the following for op
 
 ### Component catalogue.
 
-[ Insert a screenshot from the Storybook UI that lists all the stories for the app's components, and highlight those relating to your __new/modified components__ - see the example screenshot below.] .......
-
 ![](./images/storybook.png)
 
 ### UI Design.
 
-[ Insert screenshots of the **new/modified app pages** you developed (and modified existing pages), Include an appropriate caption for each one (see example below).
+Home Page Rendering
+<img width="1436" alt="Screenshot 2021-12-15 at 17 37 14" src="https://user-images.githubusercontent.com/94531892/146236781-5e4cd7c1-8fd8-49d2-976d-dc150cff43c8.png">
 
-![ ](./images/view.png)
+Trending Movies Page
+<img width="1440" alt="Screenshot 2021-12-15 at 17 38 05" src="https://user-images.githubusercontent.com/94531892/146236915-070e8b37-c9e3-4709-a9cf-143d93b00e38.png">
 
-> Shows detailed information on a movie. Clicking the 'Reviews' floating action button will display extracts from critic reviews.
+Now Playing Movies Page
+<img width="1440" alt="Screenshot 2021-12-15 at 17 38 28" src="https://user-images.githubusercontent.com/94531892/146236971-9ae688f4-ada7-4b91-99a7-cc4f8a4922ec.png">
 
-![ ](./images/view.png)
+Upcoming Movies Page
+<img width="1440" alt="Screenshot 2021-12-15 at 17 38 59" src="https://user-images.githubusercontent.com/94531892/146237053-d5722007-ac82-47b2-bbf2-6eb3593ab693.png">
 
-> Shows detailed information on a movie. Clicking the 'Reviews' floating action button will display extracts from critic reviews.
 
 ### Routing.
 
@@ -75,7 +90,7 @@ Setup and initial configuration after cloning repo includes the following for op
     "Upcoming", path: "/movies/upcoming"
     "Popular Actors", path: "/person/popular"
     "Login", path: "/login"
-    "Logout", path: "/logout
+    "Logout", path: "/logout"
 
 ## Independent learning (If relevant).
 

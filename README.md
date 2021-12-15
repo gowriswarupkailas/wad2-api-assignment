@@ -19,7 +19,20 @@ This Assignment is a React App for displaying a Movies App Database.
 
 ## Setup requirements.
 
-[ Outline any non-standard setup steps necessary to run your app locally after cloning the repo.]
+Setup and initial configuration after cloning repo includes the following for optimal functionality:
+
+1.  run the following command in the integrated terminal
+    '''npm install'''
+    in the integrated terminal to install the prerequisites.
+
+2.  The TMDB API is used for gathering the movies app data. An API Key that is used to authenticate the API requests can be collectd using the method below.
+    Signup for an account here.
+    Log in to your account. To get a key, follow this sequence:
+
+        '''Settings > API > Create > Click on Request an API > Click "Developer" > Fill in Details'''
+
+3.  To install the auth0 prerequisited, run the following command in the integrated terminal
+    '''npm install @auth0/auth0-react'''
 
 ## API endpoints.
 
@@ -52,17 +65,22 @@ This Assignment is a React App for displaying a Movies App Database.
 
 ### Routing.
 
-[ List the __new routes__ supported by your app and state the associated page.]
+//intention for the contents apart from the last two(login/logout) to be protected, however, still to be implemented funtionally.
 
-- /blogs - displays all published blogs.
-- /blogs/:id - displays a particular blog.
-- /blogs/:id/comments - detail view of a particular blog and its comments.
-- etc.
-
-[If relevant, state what aspects of your app are protected (i.e. require authentication) and what is public.]
+    "Home", path: "/"
+    "Favorites", path: "/movies/favorites"
+    "Top Rated", path: "/movies/topRated"
+    "Now Playing", path: "/movies/nowPlaying"
+    "Trending", path: "/movies/trending"
+    "Upcoming", path: "/movies/upcoming"
+    "Popular Actors", path: "/person/popular"
+    "Login", path: "/login"
+    "Logout", path: "/logout
 
 ## Independent learning (If relevant).
 
-1. https://developers.themoviedb.org/3/getting-started/introduction
+1. https://developers.themoviedb.org/3/getting-started/introduction: for additional
+   endpoint refernces.
 2. Auth0 Authentication attempt using Auth0 tutorials for integration with node.js from:
-   https://auth0.com.
+   https://auth0.com and
+3. https://medium.com/@jaypatel32157/using-auth0-to-secure-your-react-web-app-2d551d312d1

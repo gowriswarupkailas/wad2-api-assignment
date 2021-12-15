@@ -13,10 +13,10 @@ import { withRouter } from "react-router-dom";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-import logo from "./logo.svg";
-import "./App.css";
-import Login from "./components/Login";
-import Logout from "./components/Logout";
+// import logo from "./logo.svg";
+// import "./App.css";
+// import Login from "./components/Login";
+// import Logout from "./components/Logout";
 
 const useStyles = makeStyles((theme) => ({
   title: {

@@ -1,101 +1,67 @@
-# Assignment 1 - ReactJS app.
+# Assignment 2 - Updated Web API
 
 Name: Gowriswarup Kailas Perumal
 
-## Overview.
+## Features.
 
-This Assignment is a React App for displaying a Movies App Database.
+...... A bullet-point list of the ADDITIONAL features you have implemented in the API **THAT WERE NOT IN THE LABS** ......,
 
-### Features.
+- Feature 1 - .... Database Integration with MongoDB .....
+- Feature 2 - .... API routes with connection to auth ...
+- Feature 3 = ... Authentication ...
 
-- Shows the currently playing movies
-- Shows the currently top rated movies
-- Shows the currently trending movies
-- Shows the upcoming movies
-- Shows the list of popular actors
-- Attempt at Auth0 authentication
+## Installation Requirements
 
-## Setup requirements.
+After cloning the repo, :-
 
-Setup and initial configuration after cloning repo includes the following for optimal functionality:
+run 'npm install'
 
-1.  run the following command in the integrated terminal
+Collect your API key from TMDB, and change the API key in '.env' file of the code. You should change you API key at this line of code -> 'REACT_APP_TMDB_KEY'. at React App and over in Movie_Api -> 'TMDB_KEY'.
 
-    ```
-    npm install
-    ```
-    
-    in the integrated terminal to install the prerequisites.
+## API Configuration
 
-2.  The TMDB API is used for gathering the movies app data. An API Key that is used to authenticate the API requests can be collectd using the method below.
-    Signup for an account at https://www.themoviedb.org/
-    Log in to your account. To get a key, follow this sequence:
+Describe any configuration that needs to take place before running the API. For example, creating an `.env` and what variables to put in it. Give an example of how this might be structured/done.
+REMEMBER: DON'T PUT YOUR OWN USERNAMES/PASSWORDS/AUTH KEYS IN THE README OR ON GITHUB, just placeholders as indicated below:
 
-        '''Settings > API > Create > Click on Request an API > Click "Developer" > Fill in Details'''
-        
-    
-    <img width="1286" alt="Screenshot 2021-12-15 at 17 44 32" src="https://user-images.githubusercontent.com/94531892/146237948-1948565f-08de-436b-9538-20d516cefeef.png">
+NODE_ENV=development
+PORT=8080
+HOST=localhost
+MONGO_DB=-DatabaseURL-
+SEED_DB=True
+SECRET= -JWTSecret-
+TMDB_KEY= -TMDBKEY-
 
-    And once approved, in the project base folder, create a new file called .env with the following content:
-    
-    ```
-    REACT_APP_TMDB_KEY= <- your API key value ->
-    ```
+## API Design
 
-3.  To install the auth0 prerequisited, run the following command in the integrated terminal
+Give an overview of your web API design, perhaps similar to the following:
 
-    ```
-    npm install @auth0/auth0-react
-    ```
+|                               | GET                       | POST                          | PUT | DELETE |
+| ----------------------------- | ------------------------- | ----------------------------- | --- | ------ |
+| /api/movies                   | Gets a list of movies     | N/A                           | N/A |
+| /api/movies/{movieid}         | Get a Movie               | N/A                           | N/A | N/A    |
+| /api/movies/{movieid}/reviews | Get all reviews for movie | Create a new review for Movie | N/A | N/A    |
+| ...                           | ...                       | ...                           | ... | ...    |
 
-## API endpoints.
+If you have your API design on an online platform or graphic, please link to it (e.g. [Swaggerhub](https://app.swaggerhub.com/)).
 
-- Now Playing Movies - discover/movie
-- Top Rated Movies - movie/:id
-- Trending Movies -
-- Upcoming Movies
-- Popular Actors
-- Auth0 authentication prior to landing page
+## Security and Authentication
 
-## App Design.
+Give details of authentication/ security implemented on the API(e.g. passport/sessions). Indicate which routes are protected.
 
-### Component catalogue.
+## Integrating with React App
 
-![](./images/storybook.png)
+Describe how you integrated your React app with the API. Perhaps link to the React App repo and give an example of an API call from React App. For example:
 
-### UI Design.
+```Javascript
+export const getMovies = () => {
+  return fetch(
+     '/api/movies',{headers: {
+       'Authorization': window.localStorage.getItem('token')
+    }
+  }
+  )
+    .then(res => res.json())
+    .then(json => {return json.results;});
+};
 
-Home Page Rendering
-<img width="1436" alt="Screenshot 2021-12-15 at 17 37 14" src="https://user-images.githubusercontent.com/94531892/146236781-5e4cd7c1-8fd8-49d2-976d-dc150cff43c8.png">
-
-Trending Movies Page
-<img width="1440" alt="Screenshot 2021-12-15 at 17 38 05" src="https://user-images.githubusercontent.com/94531892/146236915-070e8b37-c9e3-4709-a9cf-143d93b00e38.png">
-
-Now Playing Movies Page
-<img width="1440" alt="Screenshot 2021-12-15 at 17 38 28" src="https://user-images.githubusercontent.com/94531892/146236971-9ae688f4-ada7-4b91-99a7-cc4f8a4922ec.png">
-
-Upcoming Movies Page
-<img width="1440" alt="Screenshot 2021-12-15 at 17 38 59" src="https://user-images.githubusercontent.com/94531892/146237053-d5722007-ac82-47b2-bbf2-6eb3593ab693.png">
-
-
-### Routing.
-
-//intention for the contents apart from the last two(login/logout) to be protected, however, still to be implemented funtionally.
-
-    "Home", path: "/"
-    "Favorites", path: "/movies/favorites"
-    "Top Rated", path: "/movies/topRated"
-    "Now Playing", path: "/movies/nowPlaying"
-    "Trending", path: "/movies/trending"
-    "Upcoming", path: "/movies/upcoming"
-    "Popular Actors", path: "/person/popular"
-    "Login", path: "/login"
-    "Logout", path: "/logout"
-
-## Independent learning (If relevant).
-
-1. https://developers.themoviedb.org/3/getting-started/introduction: for additional
-   endpoint refernces.
-2. Auth0 Authentication attempt using Auth0 tutorials for integration with node.js from:
-   https://auth0.com and
-3. https://medium.com/@jaypatel32157/using-auth0-to-secure-your-react-web-app-2d551d312d1
+```

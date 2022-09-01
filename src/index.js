@@ -7,17 +7,20 @@ import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
 import PopularActorsPage from "./pages/popularActorsPage";
 
-import FavoriteMoviesPage from "./pages/favoriteMoviesPage"; // NEW
+import FavoriteMoviesPage from "./pages/favoriteMoviesPage";
 import MovieReviewPage from "./pages/movieReviewPage";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import MoviesContextProvider from "./contexts/moviesContext";
 import ActorsContextProvider from "./contexts/actorsContext";
 
-import TopRatedMoviesPage from "./pages/topRatedMoviesPage"; // NEW
-import NowPlayingMoviesPage from "./pages/nowPlayingMoviesPage"; // NEW
-import TrendingMoviesPage from "./pages/trendingMoviesPage"; // NEW
-import UpcomingMoviesPage from "./pages/upcomingMoviesPage"; // NEW
+import TopRatedMoviesPage from "./pages/topRatedMoviesPage";
+import NowPlayingMoviesPage from "./pages/nowPlayingMoviesPage";
+import TrendingMoviesPage from "./pages/trendingMoviesPage";
+import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
+
+import LoginPage from "./pages/loginPage"; //NEW
+import SignUpPage from "./pages/signUpPage"; //NEW
 
 import { Auth0Provider } from "@auth0/auth0-react";
 
@@ -81,6 +84,8 @@ const App = () => {
                 component={PopularActorsPage}
               />
               <Route path="/movies/:id" component={MoviePage} />
+              <Route path="/login" component={LoginPage} />
+              <Route path="/signuUp" component={SignUpPage} />
               <Route exact path="/" component={HomePage} />
               <Redirect from="*" to="/" />
             </Switch>

@@ -6,6 +6,12 @@ Name: Gowriswarup Kailas Perumal
 
 ...... A bullet-point list of the ADDITIONAL features you have implemented in the API **THAT WERE NOT IN THE LABS** ......,
 
+--Update---
+
+Working 0Auth Functionality with private favourites (protected) link. Fully functional.
+
+---
+
 - Feature 1 - .... Database Integration with MongoDB .....
 - Feature 2 - .... API routes with connection to auth ...
 - Feature 3 = ... Authentication ...

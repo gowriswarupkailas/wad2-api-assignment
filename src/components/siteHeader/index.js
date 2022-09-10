@@ -12,6 +12,7 @@ import Menu from "@material-ui/core/Menu";
 import { withRouter } from "react-router-dom";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useAuth0 } from "@auth0/auth0-react";
 
 // import logo from "./logo.svg";
 // import "./App.css";
@@ -31,6 +32,7 @@ const SiteHeader = ({ history }) => {
   const open = Boolean(anchorEl);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const { loginWithPopup, logout } = useAuth0();
 
   const menuOptions = [
     { label: "Home", path: "/" },
@@ -39,9 +41,7 @@ const SiteHeader = ({ history }) => {
     { label: "Now Playing", path: "/movies/nowPlaying" },
     { label: "Trending", path: "/movies/trending" },
     { label: "Upcoming", path: "/movies/upcoming" },
-    { label: "Popular Actors", path: "/person/popular" },
-    { label: "Login", path: "/login" },
-    { label: "Logout", path: "/logout" }
+    { label: "Popular Actors", path: "/person/popular" }
   ];
 
   const handleMenuSelect = (pageURL) => {
@@ -109,6 +109,22 @@ const SiteHeader = ({ history }) => {
                   {opt.label}
                 </Button>
               ))}
+              <Button
+                key="Login"
+                color="inherit"
+                onClick={() => loginWithPopup()}
+              >
+                Login
+              </Button>
+              <Button
+                key="Logout"
+                color="inherit"
+                onClick={() =>
+                  logout({ returnTo: window.location.origin, federated: true })
+                }
+              >
+                Logout
+              </Button>
             </>
           )}
         </Toolbar>

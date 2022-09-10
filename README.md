@@ -8,7 +8,7 @@ Name: Gowriswarup Kailas Perumal
 
 --Update---
 
-Working 0Auth Functionality with private favourites (protected) link. Fully functional.
+Working Auth0 Functionality with private favourites (protected) link. Fully functional.
 
 ---
 
